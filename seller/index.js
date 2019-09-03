@@ -22,11 +22,11 @@ function pad(num, size) {
     return s;
 }
 
-getVideoDurationInSeconds('toystory.mp4').then((dur) => {
+getVideoDurationInSeconds('sample4.mp4').then((dur) => {
   duration = dur;
 })
 
-ffmpeg('toystory.mp4')
+ffmpeg('sample4.mp4')
     .fps(36)
     .on('end', function() {
       console.log('Screenshots taken');
