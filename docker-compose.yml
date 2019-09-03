@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  seller:
+    container_name: docker_seller
+    build: seller/
+    ports:
+      - '3000:3000'
+
+    # depends_on:
+    #  - buyer
+
+  buyer:
+    container_name: docker_buyer
+    build: buyer/
+    links:
+      - 'seller'
+    ports:
+      - '8080:8080'
+
+    # environment:
+    #  SellerHost: seller
+    # networks:
+    #   - backend
+# networks:
+#   backend:
+#     driver: "bridge"

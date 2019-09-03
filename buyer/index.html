@@ -1,0 +1,36 @@
+<html>
+  <body>
+    <h1>
+      Webcam Stream Received by Client
+    </h1>
+    <img id = "image">
+
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+
+
+    <script>
+
+
+      const socket = io.connect('http://localhost:8080')
+      socket.on('image',(image) =>{
+        //console.log('data', data);
+        console.log('Ready to play')
+        const imageElm = document.getElementById('image');
+        imageElm.src = `data:image/jpeg;base64,${image}`
+        //socket.emit('test','test');
+      })
+
+      // socket.on('pay',(amount) =>{
+      //   console.log(`need to pay: ${amount}`);
+      //   // transaction_hash = await iota.sendTokens(sender_seed, recv_address, 0, 'test payment');
+      //   setTimeout(function(){
+      //     console.log('paid',amount);
+      //     socket.emit('paid',amount);
+      //   },5000);
+      //
+      // })
+
+    </script>
+  </body>
+</html>
