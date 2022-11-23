@@ -12,7 +12,7 @@
     "express": "^4.16.3",
     "fluent-ffmpeg": "^2.1.2",
     "get-video-duration": "^1.0.3",
-    "socket.io": "^2.1.1"
+    "socket.io": "^2.5.0"
   },
   "author": "Matt Shi",
   "license": "ISC",
